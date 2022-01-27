@@ -1,30 +1,76 @@
+ /* hide default "x" in input */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* background color */
 html {
     background-color: rgb(240, 240, 240);
 }
 
+/* default font + no highlighting */
 * {
-    color: rgb(70, 70, 70);
+    color: rgb(50, 50, 50);
     font-family: 'Source Sans Pro', sans-serif;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-h1 {
+/* link bar */
+div#linkBar {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-left: 45px;
+}
+
+/* tab links */
+button.link {
+    background: white;
+    border: none;
+    float: left;
+    font-size: 20px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+/* new link button */
+span#newTab {
+    font-size: 26px;
+    text-align: center;
+    padding: 0px;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    margin-top: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+/* list name */
+h1#listName {
     font-size: 30px;
     padding: 8px;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 10px;
-    cursor: pointer;
     width: 300px;
 }
 
-div {
+/* input + add button */
+div#addBar {
     width: 400px;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
-input {
+/* input */
+input.input {
     font-size: 17px;
     display: inline-block;
     padding: 5px;
@@ -33,22 +79,23 @@ input {
     width: 84%;
 }
 
-#add {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+/* no outline when typing */
+h1#listName:focus, input:focus {
+    outline: none;
+}
+
+/* add button */
+span.add {
     font-size: 17px;
     text-align: center;
-    background-color: white;
-    cursor: pointer;
+    background: white;
     display: inline-block;
     padding: 5px;
     margin-right: auto;
     width: 15%;
-    transition: 0.2s;
 }
 
+/* list */
 ul {
     font-size: 20px;
     width: 400px;
@@ -58,12 +105,8 @@ ul {
     padding-left: 0;
 }
 
+/* items */
 li {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
     position: relative;
     padding: 8px 0px 8px 35px;
     transition: 0.2s;
@@ -72,7 +115,8 @@ li {
     white-space: pre-line;
 }
 
-.delete {
+/* delete button */
+span.delete {
     font-size: 20px;
     text-align: center;
     padding: 8px;
@@ -81,30 +125,19 @@ li {
     position: absolute;
     right: 0px;
     top: 0px;
-    transition: 0.2s;
 }
 
-h1:focus, input:focus {
-    outline: none;
-}
-
-h1:hover, #add:hover, li:hover {
-    background-color: rgb(230, 230, 230);
-}
-
-.delete:hover {
-    background-color: rgb(210, 210, 210);
-}
-
+/* checked item */
 li.checked {
-    background-color: rgb(220, 220, 220);
+    background: rgb(220, 220, 220);
     text-decoration: line-through;
 }
 
+/* checkmark for checked item */
 li.checked::before {
     content: '';
     position: absolute;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(50, 50, 50);
     border-style: solid;
     border-width: 0 2px 2px 0;
     top: 8px;
@@ -112,4 +145,24 @@ li.checked::before {
     transform: rotate(45deg);
     height: 16px;
     width: 7px;
+}
+
+/* pointer cursor */
+button.link, span#newTab, h1#listName, span#add, li {
+    cursor: pointer;
+}
+
+/* transition */
+button.link, span#newTab, span.add, span.delete {
+    transition: 0.2s;
+}
+
+/* darker buttons when hovering */
+button.link:hover, h1#listName:hover, span#newTab:hover, span.add:hover, li:hover {
+    background: rgb(230, 230, 230);
+}
+
+/* even darker buttons when hovering/active */
+button.active, span.delete:hover {
+    background: rgb(220, 220, 220);
 }
