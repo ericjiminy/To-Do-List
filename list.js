@@ -242,4 +242,3 @@ function addListeners() {
 }
 
 load();
-// start();
