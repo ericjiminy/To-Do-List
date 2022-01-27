@@ -241,5 +241,5 @@ function addListeners() {
     }
 }
 
-// load();
-start();
+load();
+// start();
