@@ -7,7 +7,7 @@
 
 /* background color */
 html {
-    background-color: rgb(240, 240, 240);
+    background-color:#ebd4b5;
 }
 
 /* default font + no highlighting */
@@ -36,7 +36,18 @@ button.link {
     float: left;
     font-size: 20px;
     padding: 12px;
+    padding-right: 8px;
     margin-bottom: 20px;
+}
+
+/* close tab button */
+span.close {
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 8px;
+    border-radius: 50%;
+    margin-left: 8px;
 }
 
 /* new link button */
@@ -47,7 +58,7 @@ span#newTab {
     border-radius: 50%;
     width: 33px;
     height: 33px;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-left: 6px;
     margin-right: 6px;
 }
@@ -76,7 +87,7 @@ input.input {
     padding: 5px;
     border: none;
     margin-left: auto;
-    width: 84%;
+    width: 83%;
 }
 
 /* no outline when typing */
@@ -92,6 +103,7 @@ span.add {
     display: inline-block;
     padding: 5px;
     margin-right: auto;
+    margin-left: 4px;
     width: 15%;
 }
 
@@ -118,6 +130,7 @@ li {
 /* delete button */
 span.delete {
     font-size: 20px;
+    font-weight: bold;
     text-align: center;
     padding: 8px;
     padding-left: 14px;
@@ -129,7 +142,7 @@ span.delete {
 
 /* checked item */
 li.checked {
-    background: rgb(220, 220, 220);
+    background: #dfc39d;
     text-decoration: line-through;
 }
 
@@ -148,7 +161,7 @@ li.checked::before {
 }
 
 /* pointer cursor */
-button.link, span#newTab, h1#listName, span#add, li {
+button.link, span#newTab, h1#listName, span.add, li {
     cursor: pointer;
 }
 
@@ -159,10 +172,10 @@ button.link, span#newTab, span.add, span.delete {
 
 /* darker buttons when hovering */
 button.link:hover, h1#listName:hover, span#newTab:hover, span.add:hover, li:hover {
-    background: rgb(230, 230, 230);
+    background: #d4b68b;
 }
 
 /* even darker buttons when hovering/active */
-button.active, span.delete:hover {
-    background: rgb(220, 220, 220);
+button.active, span.close:hover, span.delete:hover {
+    background: #c5a77e;
 }
