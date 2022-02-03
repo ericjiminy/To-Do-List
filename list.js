@@ -209,8 +209,8 @@ function start() {
     let firstItem = document.createElement("li");   // first item
     firstItem.textContent = "Click to check me off";
     firstItem.addEventListener("click", checked);
-    createDelete(li);
-    activeTab.querySelector("ul").append(li);
+    createDelete(firstItem);
+    activeTab.querySelector("ul").append(firstItem);
 }
 
 // save current html to localStorage
